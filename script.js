@@ -43,19 +43,23 @@ function calculate() {
     }
 
 
-    document.getElementById("result").innerHTML =
-    `
-    <p>간이 측정값</p>
-    <h3>${pm.toFixed(1)} ㎍/m³</h3>
+    let resultBox = document.getElementById("result");
 
-    <p>습도 영향 보정량</p>
-    <h3>${correction.toFixed(1)} ㎍/m³</h3>
+resultBox.classList.remove("hidden");
 
-    <hr>
+resultBox.innerHTML =
+`
+<p>간이 측정값</p>
+<h3>${pm.toFixed(1)} ㎍/m³</h3>
 
-    <p>보정 후 예상 실제 미세먼지</p>
-    <h2>${realPM.toFixed(1)} ㎍/m³</h2>
+<p>습도 영향 보정량</p>
+<h3>${correction.toFixed(1)} ㎍/m³</h3>
 
-    <p>${level}</p>
-    `;
+<hr>
+
+<p>보정 후 예상 실제 미세먼지</p>
+<h2>${realPM.toFixed(1)} ㎍/m³</h2>
+
+<p>${level}</p>
+`;
 }
