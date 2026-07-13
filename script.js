@@ -32,13 +32,13 @@ function calculate() {
 
     let level = "";
 
-    if (realPM <= 15) {
+    if (realPM <= 30) {
         level = "😊 좋음";
     }
-    else if (realPM <= 35) {
+    else if (realPM <= 80) {
         level = "😐 보통";
     }
-    else if (realPM <= 75) {
+    else if (realPM <= 150) {
         level = "😷 나쁨";
     }
     else {
