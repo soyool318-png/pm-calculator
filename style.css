@@ -16,7 +16,7 @@ body{
 
 
 .container{
-    width:500px;
+    width:550px;
     background:white;
     padding:35px;
     border-radius:20px;
@@ -24,24 +24,17 @@ body{
 }
 
 
+/* 제목 */
 h1{
     text-align:center;
     color:#1f4e79;
-    font-size:25px;
+    font-size:22px;
     margin-bottom:25px;
     white-space:nowrap;
 }
 
 
-.subtitle{
-    text-align:center;
-    color:#666;
-    font-size:14px;
-    line-height:1.6;
-    margin-bottom:30px;
-}
-
-
+/* 입력창 */
 .input-box{
     margin-bottom:22px;
 }
@@ -71,6 +64,7 @@ input:focus{
 }
 
 
+/* 계산 버튼 */
 button{
     width:100%;
     padding:14px;
@@ -91,6 +85,7 @@ button:hover{
 }
 
 
+/* 결과창 */
 .result{
     margin-top:30px;
     padding:25px;
@@ -130,7 +125,8 @@ button:hover{
 }
 
 
-@media(max-width:500px){
+/* 모바일 대응 */
+@media(max-width:600px){
 
     .container{
         width:90%;
@@ -138,10 +134,14 @@ button:hover{
     }
 
     h1{
-        font-size:22px;
+        font-size:18px;
+        white-space:normal;
     }
 
+}
+
+
+/* 결과창 숨김 */
 .hidden{
     display:none;
-}
 }
