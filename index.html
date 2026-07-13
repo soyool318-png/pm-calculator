@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간이 미세먼지 보정 계산기</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>간이 미세먼지 보정 계산기</h1>
+
+    <p class="subtitle">
+        간이 측정기의 습도와 미세먼지 농도를 입력하면
+        보정된 미세먼지 농도를 계산합니다.
+    </p>
+
+    <div class="input-box">
+
+        <label>습도 (%)</label>
+        <input
+            type="number"
+            id="humidity"
+            placeholder="예 : 80"
+        >
+
+    </div>
+
+    <div class="input-box">
+
+        <label>간이 미세먼지 농도 (㎍/m³)</label>
+        <input
+            type="number"
+            id="pm"
+            step="0.1"
+            placeholder="예 : 35.5"
+        >
+
+    </div>
+
+    <button onclick="calculate()">
+        계산하기
+    </button>
+
+    <div id="result" class="result"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
