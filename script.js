@@ -12,11 +12,14 @@ function calculate() {
 
     // =====================================
     // 사용자 측정 데이터 기반 습도 보정식
-    // 오차 = 0.55 × 습도 - 24.5
+    // 습도가 높을수록 간이 PM 센서가
+    // 실제보다 높게 측정되는 현상을 보정
+    //
+    // 오차 = 0.75 × 습도 - 38.7
     // 실제 PM = 간이 PM - 오차
     // =====================================
 
-    let correction = 0.55 * humidity - 24.5;
+    let correction = 0.75 * humidity - 38.7;
 
     let realPM = pm - correction;
 
@@ -45,21 +48,21 @@ function calculate() {
 
     let resultBox = document.getElementById("result");
 
-resultBox.classList.remove("hidden");
+    resultBox.classList.remove("hidden");
 
-resultBox.innerHTML =
-`
-<p>간이 측정값</p>
-<h3>${pm.toFixed(1)} ㎍/m³</h3>
+    resultBox.innerHTML =
+    `
+    <p>간이 측정값</p>
+    <h3>${pm.toFixed(1)} ㎍/m³</h3>
 
-<p>습도 영향 보정량</p>
-<h3>${correction.toFixed(1)} ㎍/m³</h3>
+    <p>습도로 인한 측정 오차</p>
+    <h3>${correction.toFixed(1)} ㎍/m³</h3>
 
-<hr>
+    <hr>
 
-<p>보정 후 예상 실제 미세먼지</p>
-<h2>${realPM.toFixed(1)} ㎍/m³</h2>
+    <p>보정 후 예상 실제 미세먼지</p>
+    <h2>${realPM.toFixed(1)} ㎍/m³</h2>
 
-<p>${level}</p>
-`;
+    <p>${level}</p>
+    `;
 }
